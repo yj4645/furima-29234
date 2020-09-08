@@ -11,13 +11,12 @@
 | password        | string | null: false |
 | first_name      | string | null: false |
 | last_name       | string | null: false |
-| birth_date      | string | null: false |
+| birth_date      | date   | null: false |
 | first_name_kana | string | null: false |
 | last_name_kana  | string | null: false |
 
 ### Association
 
-- has_many :addresses
 - has_many :items
 - has_many :orders
 
@@ -26,8 +25,8 @@
 | Column                        | Type       | Options                       |
 | ----------------------------- | ---------- | ----------------------------- |
 | user                          | references | null: false,foreign_key_true  |
-| name                          | references | null: false,foreign_key_true  |
-| price                         | string     | null: false                   |
+| name                          | string     | null: false                   |
+| price                         | integer    | null: false                   |
 | explanation                   | text       | null: false                   |
 | category_id(active_hash)      | integer    | null: false,foreign_key_true  |
 | burden_id(active_hash)        | integer    | null: false,foreign_key_true  |
@@ -56,16 +55,13 @@ has_one: address
 
 | Column         | Type       | Options                       |
 | -------------- | ---------- | ----------------------------- |
-| user           |references  | null: false,foreign_key_true  |
 | order          | references | null: false,foreign_key_true  |
 | phone_number   | string     | null: false                   |
-| prefecture_id  | integer    | null: false,foreign_key_true  |                  
+| prefecture_id  | integer    | null: false                   |                  
 | postal_code    | string     | null: false                   |
 | city           | string     | null: false                   |
 
 ### Association
 
-belongs_to: users
-belongs_to: orders
-
+belongs_to: order
 
