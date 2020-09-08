@@ -29,6 +29,7 @@
 | price                         | integer    | null: false                   |
 | explanation                   | text       | null: false                   |
 | category_id(active_hash)      | integer    | null: false,foreign_key_true  |
+| status_id(active_hash)        | integer    | null: false,foreign_key_true  |
 | burden_id(active_hash)        | integer    | null: false,foreign_key_true  |
 | prefecture_id(active_hash)    | integer    | null: false,foreign_key_true  |
 | shipping_days_id(active_hash) | integer    | null: false,foreign_key_true  |
@@ -55,6 +56,7 @@ has_one: address
 
 | Column         | Type       | Options                       |
 | -------------- | ---------- | ----------------------------- |
+| building_name  | string     | null: false                   |
 | order          | references | null: false,foreign_key_true  |
 | phone_number   | string     | null: false                   |
 | prefecture_id  | integer    | null: false                   |                  
