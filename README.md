@@ -62,6 +62,7 @@ has_one: address
 | prefecture_id  | integer    | null: false                   |                  
 | postal_code    | string     | null: false                   |
 | city           | string     | null: false                   |
+| house_number   | string     | null: false                   |
 
 ### Association
 
