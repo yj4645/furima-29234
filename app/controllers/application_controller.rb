@@ -16,4 +16,4 @@ class ApplicationController < ActionController::Base
   end
 end
 
-# configure_permitted_parametersの設定をしましょう
+

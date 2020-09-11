@@ -15,13 +15,17 @@ class User < ApplicationRecord
   end
 
   validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i, message: '半角英数字を使用してください' } do
+  end
 
-  validates :nickname, presence: true
-  validates :email, presence: true
-  validates :birth_date, presence: true
+  with_options presence: true do
+  validates :nickname
+  validates :email
+  validates :birth_date
+end
+
 
   has_many :items
   has_many :orders
 end
-end
+
 
