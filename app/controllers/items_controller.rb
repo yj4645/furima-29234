@@ -3,15 +3,7 @@ class ItemsController < ApplicationController
     params.require(:item).permit(:user, :name, :price)
   end
 
-  
-
   def index
     @user = User.new
   end
- 
-
-
-  
-
-
 end
