@@ -7,12 +7,12 @@ RSpec.describe Item, type: :model do
 end
 
 
-#describe '出品情報の保存' do
+describe '出品情報の保存' do
 
   context "出品情報の保存ができる場合" do
     it "nameとpriceとexplanationとimageとcategory_idとstatus_idとburden_idとprefecture_idとshpping_days_idが存在すれば保存ができる" do
      expect(@item).to be_valid
-end
+  end
 end
 
  context '出品情報の保存ができない場合' do
@@ -82,6 +82,11 @@ end
       @item.valid?
       expect(@item.errors.full_messages).to include("Price is not included in the list")
     end
-  end
+    it '価格が¥300~¥9,999,999でないと保存できない' do
+      @item.price = '10,000,000'
+      @item.valid?
+      expect(@item.errors.full_messages).to include("Price is not included in the list")
+    end
+   end
+ end
 end
-#end

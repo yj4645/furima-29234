@@ -13,8 +13,6 @@ class Item < ApplicationRecord
 
   validates :price, inclusion: { in: 300..9_999_999 }
 
-# validates :price, format: { with: /\A[0-9]+\z/, message: '半角数字を使用してください' } 
-
 with_options presence: true do
   validates :name
   validates :price

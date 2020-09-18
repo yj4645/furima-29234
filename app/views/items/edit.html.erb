@@ -10,9 +10,8 @@ app/assets/stylesheets/items/new.css %>
     <%= form_with model: @item, url: edit_item_path, class: 'edit-main'  local: true) do |f| %>
      
 
-    <%# インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
-    <% render 'shared/error_messages', model:f.object %>
-    <%# //インスタンスを渡して、エラー発生時にメッセージが表示されるようにしましょう。%>
+    <% render 'shared/error_messages', model: f.object %>
+    
 
     <%# 出品画像 %>
     <div class="img-upload">
