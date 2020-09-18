@@ -3,11 +3,11 @@ FactoryBot.define do
     name  {Faker::Name.initials(number: 2)}
     price  { 1000 }
     explanation {Faker::Lorem.sentence}
-    category_id {'メンズ'}
-    status_id   {'新品'}
-    burden_id  {'出品者'}
-    prefecture_id  {'愛知県'}
-    shipping_days_id {'１週間'}
+    category_id { 4 }
+    status_id   { 3 }
+    burden_id  { 3 }
+    prefecture_id  { 4 }
+    shipping_days_id { 5 }
     
     user_id { 1 }
     association :user

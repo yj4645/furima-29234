@@ -17,13 +17,17 @@ with_options presence: true do
   validates :name
   validates :price
   validates :explanation
-  validates :category_id
-  validates :status_id
-  validates :prefecture_id
-  validates :burden_id
-  validates :shipping_days_id
+
+
+
+  validates :category_id, numericality: { other_than: 1 }
+  validates :status_id, numericality: { other_than: 1 }
+  validates :prefecture_id, numericality: { other_than: 1 }
+  validates :burden_id, numericality: { other_than: 1 }
+  validates :shipping_days_id, numericality: { other_than: 1 }
   validates :image
 end
 end
+
 
 
