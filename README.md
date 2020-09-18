@@ -33,6 +33,8 @@
 | burden_id(active_hash)        | integer    | null: false                   |
 | prefecture_id(active_hash)    | integer    | null: false                   |
 | shipping_days_id(active_hash) | integer    | null: false                   |
+| image                         | integer    |
+null:false                    |
 
 ### Association
 
