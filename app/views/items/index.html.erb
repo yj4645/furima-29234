@@ -126,10 +126,8 @@
     <h2 class='title'>ピックアップカテゴリー</h2>
     <%= link_to '新規投稿商品', new_item_path , class: "subtitle" %>
       <ul class='item-lists'>
-    
-
-      
-      <% @items.each do |item| %>
+      <% @item == !nil %>
+    <% @items.each do |item| %>
       <li class='list'>
        
        <%= link_to 'item_image_id' do %>
@@ -163,13 +161,15 @@
         <% end %>
       </li>
       <% end %>
+       
+
       
 
       <%# 商品がない場合のダミー %>
-      
+      <% @item == nil %>
       <li class='list'>
         <%= link_to '#' do %>
-        <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" if item.image.attached? %>
+        <%= image_tag "https://s3-ap-northeast-1.amazonaws.com/mercarimaster/uploads/captured_image/content/10/a004.png", class: "item-img" %>
         <div class='item-info'>
           <h3 class='item-name'>
             商品を出品してね！
