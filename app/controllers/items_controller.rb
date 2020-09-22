@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:edit, :show, :update]
+before_action :set_item, only: [:edit, :show, :update,:destroy]
 
   def new
     @item = Item.new
@@ -8,6 +8,14 @@ before_action :set_item, only: [:edit, :show, :update]
   def index
     @items = Item.includes(:user).order("created_at DESC")
   end
+
+  def destroy
+     if  @item.destroy
+       redirect_to root_path
+    else
+      render :show
+  end
+end
 
   def create 
     @item = Item.new(item_params)
