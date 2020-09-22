@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-before_action :set_item, only: [:edit, :show, :update]
+before_action :set_item, only: [:edit, :show, :update,:destroy]
 
   def new
     @item = Item.new
@@ -10,8 +10,7 @@ before_action :set_item, only: [:edit, :show, :update]
   end
 
   def destroy
-    if item = Item.find(params[:id])
-       item.destroy
+     if  @item.destroy
        redirect_to root_path
     else
       render :show
