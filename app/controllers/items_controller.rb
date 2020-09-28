@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
 before_action :set_item, only: [:edit, :show, :update,:destroy]
+before_action :authenticate_user!, only: [:new]
 
   def new
     @item = Item.new
@@ -16,6 +17,8 @@ before_action :set_item, only: [:edit, :show, :update,:destroy]
       render :show
   end
 end
+
+
 
   def create 
     @item = Item.new(item_params)
@@ -46,10 +49,6 @@ end
     @item = Item.find(params[:id])
   end
   
-  def move_to_index
-    unless user_signed_in?
-      redirect_to action: :index
-    end
-  end
+
 end
 
