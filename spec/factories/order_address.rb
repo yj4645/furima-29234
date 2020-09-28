@@ -10,7 +10,7 @@ FactoryBot.define do
     prefecture_id  { 4 }
     user_id { 1 }
     item_id { 1 }
-    # association :order, :address
+   
     
   end
 end
