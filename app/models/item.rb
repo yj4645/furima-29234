@@ -23,7 +23,7 @@ with_options presence: true do
 
   validates :category_id, numericality: { other_than: 1 }
   validates :status_id, numericality: { other_than: 1 }
-  validates :prefecture_id, numericality: { other_than: 1 }
+  validates :prefecture_id, numericality: { other_than: 0 }
   validates :burden_id, numericality: { other_than: 1 }
   validates :shipping_days_id, numericality: { other_than: 1 }
   validates :image
